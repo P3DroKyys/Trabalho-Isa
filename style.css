@@ -1,0 +1,625 @@
+/* ===================================================================
+   ESTÉTICA "DEEP OCEAN" (Baseada na ref. Squarespace)
+   =================================================================== */
+
+/* --- Variáveis da Paleta (MODO ESCURO - PADRÃO) --- */
+:root {
+    --cor-fundo-abissal: #121212; /* Fundo principal (quase preto) */
+    --cor-fundo-card: #1d1d1d;    /* Fundo das seções (cinza-escuro) */
+    --cor-borda: #333;
+    
+    --cor-texto-principal: #e0e0e0; /* Texto (branco suave, não cansa) */
+    --cor-texto-titulo: #ffffff;   /* Títulos (branco puro) */
+    
+    /* O novo "bioluminescente" - nossa cor de destaque */
+    --cor-destaque: #0AFADF; /* Um ciano/aqua vibrante */
+    
+    --sombra-dark-leve: 0 4px 12px rgba(0, 0, 0, 0.2);
+    --sombra-dark-media: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* ===================================================================
+   RESET BÁSICO E TIPOGRAFIA (FOCO NO CONTRASTE)
+   =================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 17px;
+    line-height: 1.75;
+    background-color: var(--cor-fundo-abissal);
+    color: var(--cor-texto-principal);
+    -webkit-font-smoothing: antialiased;
+    /* Adiciona transição suave entre os modos de cor */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--cor-texto-titulo);
+    transition: color 0.3s ease;
+}
+
+p, li {
+    margin-bottom: 1.2rem;
+    max-width: 70ch;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+/* ===================================================================
+   CABEÇALHO E NAVEGAÇÃO (HEADER)
+   =================================================================== */
+header {
+    background-color: var(--cor-fundo-card);
+    color: var(--cor-texto-titulo);
+    padding: 1rem 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--cor-borda);
+    box-shadow: var(--sombra-dark-media);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+header h1 {
+    font-size: 2.2em;
+    color: var(--cor-texto-titulo);
+    margin: 0;
+}
+
+nav {
+    background-color: transparent;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0.5rem 0;
+}
+
+nav li {
+    margin: 0.25rem 0.5rem;
+    margin-bottom: 0.25rem;
+}
+
+nav a {
+    color: var(--cor-texto-principal); /* Mais suave que o título */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9em;
+    padding: 0.7rem 1rem;
+    border-radius: 5px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Micro-interação: underline bioluminescente */
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 1rem;
+    right: 1rem;
+    height: 2px;
+    background-color: var(--cor-destaque);
+    transform: scaleX(0);
+    transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.3s ease;
+}
+
+nav a:hover, nav a:focus {
+    color: var(--cor-destaque);
+}
+nav a:hover::after, nav a:focus::after {
+    transform: scaleX(1);
+}
+
+/* ===================================================================
+   SEÇÃO HERO (VÍDEO DE FUNDO)
+   =================================================================== */
+.hero {
+    position: relative;
+    height: 90vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cor-texto-titulo);
+    text-align: center;
+    padding: 0;
+    margin-bottom: 2rem;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.video-background video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+/* Overlay (mais forte para o tema dark) */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Fundo preto sólido com 60% de opacidade */
+    background: rgba(0, 0, 0, 0.6); 
+    z-index: 1;
+    transition: background-color 0.3s ease;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem 3rem;
+    max-width: 90%;
+}
+
+.hero h2 {
+    color: var(--cor-texto-titulo);
+    font-size: 4.5em; /* Impacto (estilo Squarespace) */
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 15px rgba(0,0,0,0.7);
+    border-bottom: none;
+}
+
+.hero p {
+    font-size: 1.4em;
+    margin-bottom: 2.5rem; /* Mais espaço */
+    text-shadow: 0 1px 8px rgba(0,0,0,0.6);
+    max-width: 100%;
+    color: var(--cor-texto-principal);
+}
+
+/* Botão (Estilo Squarespace: Sólido, alto contraste) */
+.btn-saiba-mais {
+    display: inline-block;
+    background-color: var(--cor-texto-titulo); /* Branco */
+    color: var(--cor-fundo-abissal); /* Texto escuro */
+    padding: 0.9rem 2.5rem;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.btn-saiba-mais:hover {
+    background-color: var(--cor-destaque);
+    color: var(--cor-fundo-abissal);
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 8px 25px rgba(10, 250, 223, 0.3); /* Brilho bioluminescente */
+}
+
+/* ===================================================================
+   CONTEÚDO PRINCIPAL (MAIN)
+   =================================================================== */
+main {
+    width: 90%;
+    max-width: 1100px;
+    margin: 2rem auto;
+}
+
+/* Seções Padrão */
+section {
+    background-color: var(--cor-fundo-card);
+    padding: 3rem 4rem;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--cor-borda);
+    box-shadow: var(--sombra-dark-leve);
+    transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Remover hover da hero */
+section.hero:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: transparent;
+}
+
+section:not(.hero):hover {
+    border-color: var(--cor-destaque);
+}
+
+section h2 {
+    font-size: 2.4em;
+    margin-bottom: 1.5rem;
+    border-bottom: 4px solid var(--cor-destaque); /* Destaque */
+    padding-bottom: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+section h3 {
+    color: var(--cor-destaque); /* Destaque */
+    font-size: 1.6em;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+/* Fundo alternativo (neste caso, é o fundo principal) */
+.fundo-alternativo {
+    background-color: var(--cor-fundo-abissal);
+    border: 1px solid var(--cor-borda);
+}
+
+/* ===================================================================
+   SEÇÃO CARDS (ESPÉCIES)
+   =================================================================== */
+#especies {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    background-color: var(--cor-fundo-abissal);
+    border: none;
+    box-shadow: none;
+    border-radius: 12px; /* Adicionado para consistência */
+}
+
+#especies h2 {
+    grid-column: 1 / -1;
+    background-color: var(--cor-fundo-card);
+    padding: 3rem 4rem;
+    margin: 0 0 1.5rem 0; /* Simplificado */
+    border-radius: 12px; /* Consistência */
+    border: 1px solid var(--cor-borda);
+    border-bottom: 4px solid var(--cor-destaque);
+    box-shadow: var(--sombra-dark-leve);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.card {
+    background-color: var(--cor-fundo-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: var(--sombra-dark-leve);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-color: var(--cor-destaque);
+}
+
+.card h3 {
+    color: var(--cor-texto-titulo);
+    font-size: 1.4em;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    font-size: 0.9em;
+    max-width: 100%;
+    margin-bottom: 0;
+    color: var(--cor-texto-principal);
+    transition: color 0.3s ease;
+}
+
+/* ===================================================================
+   RODAPÉ (FOOTER)
+   =================================================================== */
+footer {
+    text-align: center;
+    padding: 2.5rem;
+    background-color: var(--cor-fundo-card);
+    color: #888;
+    margin-top: 3rem;
+    border-top: 1px solid var(--cor-borda);
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* ===================================================================
+   SCROLLBAR CUSTOMIZADA (DARK)
+   =================================================================== */
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: var(--cor-fundo-abissal);
+    transition: background-color 0.3s ease;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--cor-borda);
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--cor-destaque);
+}
+
+/* ===================================================================
+   ESTILOS DO PAINEL DE CONFIGURAÇÕES
+   =================================================================== */
+
+#settings-trigger {
+    position: absolute;
+    top: 50%; /* Centraliza verticalmente no header */
+    right: 2rem;
+    transform: translateY(-50%);
+    color: var(--cor-texto-principal);
+    font-size: 1.5rem; /* Tamanho do ícone */
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#settings-trigger:hover {
+    color: var(--cor-destaque);
+    transform: translateY(-50%) rotate(45deg); /* Gira a engrenagem */
+}
+
+#settings-panel {
+    display: none; /* Escondido por padrão */
+    position: absolute;
+    top: calc(100% + 10px); /* Abaixo do header */
+    right: 1.5rem;
+    width: 280px;
+    background: var(--cor-fundo-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: var(--sombra-dark-media);
+    z-index: 200;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#settings-panel.show {
+    display: block; /* Mostra o painel */
+}
+
+#settings-panel h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--cor-texto-titulo);
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--cor-borda);
+    padding-bottom: 0.5rem;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.setting-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.setting-row label {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--cor-texto-principal);
+    transition: color 0.3s ease;
+}
+
+/* --- Estilo do "Switch" (Toggle) --- */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px; /* Largura */
+    height: 28px; /* Altura */
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #555;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--cor-destaque);
+}
+
+input:checked + .slider:before {
+    transform: translateX(22px); /* Distância que o círculo anda */
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+/* ===================================================================
+   TEMA: MODO CLARO (LIGHT MODE)
+   =================================================================== */
+
+body.light-mode {
+    /* 1. Redefinir as variáveis de cor */
+    --cor-fundo-abissal: #e0f2f7;   /* Fundo (azul claro) */
+    --cor-fundo-card: #ffffff;     /* Fundo das seções (branco) */
+    --cor-borda: #dddddd;
+    
+    --cor-texto-principal: #333333; /* Texto (cinza escuro) */
+    --cor-texto-titulo: #004d5a;    /* Títulos (azul oceano) */
+    
+    --cor-destaque: #0a9396;        /* Destaque (azul-petróleo) */
+
+    /* 2. Redefinir as sombras */
+    --sombra-dark-leve: 0 4px 12px rgba(0, 77, 90, 0.08);
+    --sombra-dark-media: 0 8px 24px rgba(0, 77, 90, 0.12);
+}
+
+/* 3. Ajustes específicos para o Modo Claro */
+
+/* Overlay do Hero no Modo Claro (mais suave) */
+body.light-mode .hero::before {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* Botão "Saiba Mais" no Modo Claro */
+body.light-mode .btn-saiba-mais {
+    background-color: var(--cor-destaque);
+    color: #ffffff; /* Texto branco */
+}
+body.light-mode .btn-saiba-mais:hover {
+    background-color: var(--cor-texto-titulo);
+    color: #ffffff;
+    box-shadow: 0 8px 25px rgba(10, 147, 150, 0.4);
+}
+
+/* Scrollbar no Modo Claro */
+body.light-mode ::-webkit-scrollbar {
+    background-color: var(--cor-fundo-abissal);
+}
+body.light-mode ::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border: 2px solid var(--cor-fundo-abissal);
+}
+body.light-mode ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--cor-destaque);
+}
+
+/* Ajuste do switch no Modo Claro */
+body.light-mode .slider {
+    background-color: #ccc;
+}
+body.light-mode input:checked + .slider {
+    background-color: var(--cor-destaque);
+}
+
+/* Ajuste do Título dos Cards (Espécies) no Modo Claro */
+body.light-mode #especies h2 {
+    border-bottom-color: var(--cor-destaque);
+}
+
+/* Ajuste do Card no Modo Claro */
+body.light-mode .card:hover {
+    border-color: var(--cor-destaque);
+}
+body.light-mode .card h3 {
+    color: var(--cor-texto-titulo);
+}
+
+/* Ajuste do Rodapé no Modo Claro */
+body.light-mode footer {
+    background-color: var(--cor-fundo-card);
+    color: #888;
+    border-top: 1px solid var(--cor-borda);
+}
+
+/* ===================================================================
+   RESPONSIVIDADE (MOBILE) - Ajustado para Configurações
+   =================================================================== */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+    
+    /* Ajuste do ícone de Configurações no mobile */
+    #settings-trigger {
+        right: 1.5rem;
+        font-size: 1.3rem;
+    }
+    #settings-panel {
+        right: 1rem;
+        width: calc(100% - 2rem); /* Ocupar largura */
+        max-width: 300px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5rem 0;
+    }
+    nav li {
+        margin: 0.5rem 0;
+    }
+    main {
+        width: 100%;
+        margin-top: 0;
+    }
+    section, .fundo-alternativo {
+        padding: 2rem 1.5rem;
+        margin-bottom: 1rem;
+        border-radius: 0; /* Estilo "full-width" no mobile */
+        border-left: none;
+        border-right: none;
+    }
+    .hero {
+        height: 70vh;
+        border-radius: 0;
+    }
+    .hero-content {
+        padding: 1.5rem;
+    }
+    .hero h2 {
+        font-size: 2.8em; /* Ajustado para mobile */
+    }
+    .hero p {
+        font-size: 1.1em;
+    }
+    section h2 {
+        font-size: 1.8em;
+    }
+    section h3 {
+        font-size: 1.3em;
+    }
+    #especies {
+        border-radius: 0;
+        padding: 0 1.5rem 2rem 1.5rem;
+    }
+    #especies h2 {
+        padding: 2rem 1.5rem;
+        margin: 0 -1.5rem 1.5rem -1.5rem;
+        border-radius: 0;
+    }
+}

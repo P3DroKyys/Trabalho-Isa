@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vida Marinha - Trabalho Escolar</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Descubra a Vida Marinha</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#especies">Espécies</a></li>
+                <li><a href="#ecossistemas">Ecossistemas</a></li>
+                <li><a href="#importancia">Importância</a></li>
+                <li><a href="#ameacas">Ameaças</a></li>
+                <li><a href="#preservacao">Preservação</a></li>
+                <li><a href="#curiosidades">Curiosidades</a></li>
+            </ul>
+        </nav>
+
+        <div id="settings-trigger">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path fill="currentColor" d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47.2 0-70.4l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14.1l-22.6-39.1c-1.6-2.8-4.6-4.5-7.8-4.5s-6.1 1.7-7.8 4.5l-42.6 24.6c-18.2-14.1-38.2-25.2-60.2-32.5L287 48.9c-1.1-3.2-4.1-5.4-7.5-5.4s-6.4 2.2-7.5 5.4l-11.2 49.4c-22 7.2-42 18.4-60.2 32.5L158.1 106c-3.2-1.8-7-1.8-10.1 0l-22.6 39.1c-1.6 2.8-.7 8.5 2.5 11.3l42.6 24.6c-4.3 23.2-4.3 47.2 0 70.4l-42.6 24.6c-3.2 1.8-4.1 7.5-2.5 11.3l22.6 39.1c1.6 2.8 4.6 4.5 7.8 4.5s6.1-1.7 7.8-4.5l42.6-24.6c18.2 14.1 38.2 25.2 60.2 32.5l11.2 49.4c1.1 3.2 4.1 5.4 7.5 5.4s6.4-2.2 7.5 5.4l11.2-49.4c22-7.2 42-18.4 60.2-32.5l42.6 24.6c3.2 1.8 7 1.8 10.1 0l22.6-39.1c1.6-2.8.7-8.5-2.5-11.3zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z"/>
+            </svg>
+        </div>
+
+        <div id="settings-panel">
+            <h4>Configurações</h4>
+            <div class="setting-row">
+                <label for="theme-toggle">Modo Claro</label>
+                <label class="switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            </div>
+    </header>
+
+    <main>
+
+        <section id="inicio" class="hero">
+            <div class="video-background">
+                <video autoplay muted loop playsinline poster="https://images.pexels.com/videos/4434240/pexels-photo-4434240.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                    <source src="https://videos.pexels.com/video-files/4434240/4434240-hd_1920_1080_25fps.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos HTML5.
+                </video>
+                <div class="hero-content">
+                    <h2>Bem-vindo ao Oceano</h2>
+                    <p>"Descubra o incrível mundo escondido sob as ondas!"</p>
+                    <a href="#especies" class="btn-saiba-mais">Saiba Mais</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="especies">
+            <h2>Espécies Marinhas</h2>
+            
+            <div class="card">
+                <h3>Peixes</h3>
+                <p>(Tubarões, peixes-palhaço, atum...)</p>
+            </div>
+            <div class="card">
+                <h3>Mamíferos</h3>
+                <p>(Golfinhos, baleias, focas, peixes-boi...)</p>
+            </div>
+            <div class="card">
+                <h3>Invertebrados</h3>
+                <p>(Polvos, águas-vivas, estrelas-do-mar, corais...)</p>
+            </div>
+            <div class="card">
+                <h3>Plantas e Algas</h3>
+                <p>(Fitoplâncton, algas marinhas...)</p>
+            </div>
+        </section>
+
+        <section id="ecossistemas" class="fundo-alternativo">
+            <h2>Ecossistemas Marinhos</h2>
+            <p>Os oceanos são vastos e diversos, abrigando diferentes habitats:</p>
+            <ul>
+                <li>Recifes de Coral: Berçários da vida marinha.</li>
+                <li>Manguezais: A transição vital entre terra e mar.</li>
+                <li>Regiões Abissais: O mistério das profundezas.</li>
+                <li>Oceanos Abertos (Pelágicos): O lar dos grandes migradores.</li>
+            </ul>
+        </section>
+
+        <section id="importancia">
+            <h2>Importância da Vida Marinha</h2>
+            
+            <h3>Os Pulmões Azuis do Planeta</h3>
+            <p>
+                Muitas vezes pensamos na Amazônia, mas a verdade é que <strong>mais de 50% do oxigênio</strong> que respiramos é produzido no mar. Os responsáveis são os <strong>fitoplânctons</strong> – algas microscópicas que, através da fotossíntese, liberam oxigênio e formam a base de toda a cadeia alimentar marinha.
+            </p>
+
+            <h3>O Grande Regulador Climático</h3>
+            <p>
+                Os oceanos funcionam como um gigantesco termostato global. Eles absorvem cerca de <strong>90% do calor</strong> gerado pelo aquecimento global e quase um terço do dióxido de carbono ($CO_2$) emitido por atividades humanas. Sem os oceanos para absorver esse impacto, o planeta seria um lugar inabitavelmente quente.
+            </p>
+
+            <h3>Fonte de Vida e Subsistência</h3>
+            <p>
+                Bilhões de pessoas dependem diretamente dos oceanos como principal fonte de proteína (pesca). Além disso, o turismo, o transporte marítimo e a biotecnologia (busca por novos medicamentos em organismos marinhos) geram trilhões de dólares para a economia global.
+            </p>
+        </section>
+
+        <section id="ameacas" class="fundo-alternativo">
+            <h2>Ameaças aos Oceanos</h2>
+            <p>Apesar de sua vastidão, os ecossistemas marinhos são frágeis e enfrentam perigos crescentes causados pela ação humana.</p>
+
+            <h3>A Invasão do Plástico</h3>
+            <p>
+                Estima-se que milhões de toneladas de plástico chegam aos oceanos anualmente. Esse material não se decompõe; ele se quebra em <strong>microplásticos</strong>, que são ingeridos por peixes, aves e mamíferos, contaminando toda a cadeia alimentar – incluindo os humanos.
+            </p>
+
+            <h3>Pesca Predatória e Insustentável</h3>
+            <p>
+                A sobrepesca (retirar peixes mais rápido do que eles podem se reproduzir) está levando muitas espécies comerciais à beira do colapso. Além disso, técnicas destrutivas como a pesca de arrasto de fundo destroem o leito do mar, incluindo recifes de coral, que são vitais para a reprodução de outras espécies.
+            </p>
+
+            <h3>Aquecimento e Acidificação</h3>
+            <p>
+                Ao absorver mais $CO_2$ da atmosphere, a água do mar torna-se quimicamente mais ácida. Esse fenômeno, chamado <strong>acidificação oceânica</strong>, corrói as conchas e esqueletos de organismos como corais, moluscos e alguns plânctons. Paralelamente, o aquecimento da água causa o <strong>branqueamento dos corais</strong>, expulsando as algas que lhes dão cor e alimento, matando o ecossistema.
+            </p>
+        </section>
+
+        <section id="preservacao">
+            <h2>O que Podemos Fazer</h2>
+            <p>A preservação dos oceanos depende de ações coletivas e individuais. A mudança começa com hábitos conscientes no nosso dia a dia.</p>
+            
+            <h3>Consumo Consciente (Plástico e Peixe)</h3>
+            <p>
+                A mudança mais eficaz começa em casa. <strong>Reduza drasticamente o uso de plásticos descartáveis</strong> (copos, sacolas, talheres, garrafas). Ao consumir frutos do mar, busque por selos de pesca sustentável ou evite espécies que estão sabidamente ameaçadas.
+            </p>
+
+            <h3>Responsabilidade com o Lixo</h3>
+            <p>
+                Nunca descarte lixo em praias, rios ou bueiros. Todo lixo urbano mal gerenciado (mesmo a quilômetros da costa) tem grande chance de parar no mar. Participe de mutirões de limpeza, se possível, e cobre as autoridades locais por saneamento básico e gestão de resíduos eficiente.
+            </p>
+
+            <h3>Educação e Divulgação</h3>
+            <p>
+                O primeiro passo para a preservação é o conhecimento. Entenda o impacto dos seus hábitos e informe as pessoas ao seu redor. Apoiar ONGs e projetos de conservação marinha (mesmo que apenas divulgando o trabalho delas) ajuda a fortalecer quem está na linha de frente da proteção aos mares.
+            </p>
+        </section>
+
+        <section id="curiosidades" class="fundo-alternativo">
+            <h2>Curiosidades</h2>
+            <p><strong>Sabia que...</strong></p>
+            <p>O animal mais rápido do oceano é o Peixe-vela (Agulhão-vela).</p>
+            </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Trabalho Escolar de [Seu Nome/Matéria]</p>
+    </footer>
+    
+    <script src="script.js"></script>
+
+</body>
+</html>
